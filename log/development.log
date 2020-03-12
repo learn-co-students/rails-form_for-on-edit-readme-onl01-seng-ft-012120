@@ -761,3 +761,243 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+Started GET "/posts" for 127.0.0.1 at 2020-03-12 09:45:54 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 951ms (Views: 900.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-03-12 09:46:05 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 100ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-03-12 09:46:19 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PgjS+fOfouc8RnZkJHfbkLX+QJibE1+LiXOnCbDPw4mwWiJCwBbfhTI5T0GUKm5iMl2Buyjqjez+H25Ziir32A==", "title"=>"Los Gallos", "description"=>"good tacos", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Los Gallos"], ["description", "good tacos"], ["created_at", "2020-03-12 14:46:19.370375"], ["updated_at", "2020-03-12 14:46:19.370375"]]
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 129ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-03-12 09:46:19 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 128ms (Views: 76.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-03-12 09:46:24 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 114ms (Views: 104.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-03-12 09:46:29 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 128ms (Views: 102.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2020-03-12 09:46:34 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 111ms (Views: 97.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 09:48:53 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 100ms (Views: 92.7ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/posts/5" for 127.0.0.1 at 2020-03-12 09:49:15 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5fz05DFQ9nRdnzx2hD4dhyOSITDPbjR7RF0jFxswJstxQNoo0w+u98JRdRqTU2Emy2Jp3DEaraafb3cZon0yg==", "title"=>"Los Gallos", "description"=>"good tacos and bebidas", "commit"=>"Submit Post", "id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "good tacos and bebidas"], ["updated_at", "2020-03-12 14:49:15.959687"], ["id", 5]]
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 72ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-03-12 09:49:16 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 90ms (Views: 75.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 09:51:14 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 113ms (Views: 55.4ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/posts/5" for 127.0.0.1 at 2020-03-12 09:51:29 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/F2XcTEOKIfXLmoY80zUHVwkQfdN9D6NIESKU70PIRFyD2fKAodV5dlRUz1DEWHv24eA1P4N7OpXKEMDh+oVQA==", "title"=>"Los Gallos", "description"=>"good tacos and bebidas. great local environment", "commit"=>"Submit Post", "id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "good tacos and bebidas. great local environment"], ["updated_at", "2020-03-12 14:51:29.893585"], ["id", 5]]
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 46ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-03-12 09:51:29 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 90ms (Views: 69.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 09:54:38 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 162ms (Views: 118.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 09:56:05 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 102ms (Views: 77.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 09:57:15 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 118ms (Views: 100.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/5" for 127.0.0.1 at 2020-03-12 09:58:54 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38WWvjLalsBR5R6DbkR0Irk+a/zin0v9GTmOQHS55Z1Rl2YFAVProl+aJ6beGcHQPp2q31FmmZpuVUcQTlzRzA==", "post"=>{"title"=>"Los Gallos Taquieria", "description"=>"good tacos and bebidas. great local environment"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2020-03-12 14:58:54.678223"], ["id", 5]]
+  [1m[35m (15.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 68ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-03-12 09:58:54 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 107ms (Views: 85.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/5" for 127.0.0.1 at 2020-03-12 10:00:37 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"38WWvjLalsBR5R6DbkR0Irk+a/zin0v9GTmOQHS55Z1Rl2YFAVProl+aJ6beGcHQPp2q31FmmZpuVUcQTlzRzA==", "post"=>{"title"=>"Los Gallos Taquieria", "description"=>"good tacos and bebidas. great local environment"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "Los Gallos Taquieria"], ["description", "good tacos and bebidas. great local environment"], ["updated_at", "2020-03-12 15:00:38.092822"], ["id", 5]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 42ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-03-12 10:00:38 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 59.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 10:04:56 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 95ms (Views: 63.3ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/posts/5" for 127.0.0.1 at 2020-03-12 10:05:05 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dCpRKADSYtDL9aw7R9y/Hp2g4FfHjvq2r/yAaK+kuU36eKGTM1sfssWKlR73gQrsGgMhdHR3KNHYkEk4lUGNHA==", "post"=>{"title"=>"Los Gallos Taquieria", "description"=>"good tacos and bebidas. great local environment yum!"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "good tacos and bebidas. great local environment yum!"], ["updated_at", "2020-03-12 15:05:06.024220"], ["id", 5]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 69ms (ActiveRecord: 23.3ms)
+
+
+Started GET "/posts/5" for 127.0.0.1 at 2020-03-12 10:05:06 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 82ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 10:06:13 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 92ms (Views: 79.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 10:07:26 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 129ms (Views: 98.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/5/edit" for 127.0.0.1 at 2020-03-12 10:08:37 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 95ms (Views: 63.6ms | ActiveRecord: 2.4ms)
+
+
